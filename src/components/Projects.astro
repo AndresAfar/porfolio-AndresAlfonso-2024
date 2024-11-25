@@ -1,0 +1,44 @@
+---
+import Card from "./Card.astro";
+import Proyectos from "./icons/Proyectos.astro";
+import imgOrddo from '@assets/img/proorddo-C0ekM86J.png';
+import EventsView from '@assets/img/Image_not_available.png';
+import FreeRail from '@assets/img/imgFreeRail-CFRmleET.webp';
+
+const projects = [
+  {
+    title: "Order POS",
+    description: "Proyecto final de grado: Sistema POS para toma de pedidos de restaurante.",
+    image: imgOrddo,
+    link: "https://github.com/AndresAfar/orddoOld"
+  },
+  {
+    title: "EventsView",
+    description: "Aplicación web de visualización creación y modificación de eventos.",
+    image: EventsView,
+    link: "https://github.com/AndresAfar/EventsApp"
+  },
+  {
+    title: "FreeRail",
+    description: "Aplicación web de visualización de spots y skateparks para practica de deportes extremos.",
+    image: FreeRail,
+    link: "https://github.com/AndresAfar/FreeRail"
+  },
+];
+---
+
+<div class="p-8">
+    <h2 class="flex items-center text-3xl font-semibold text-gray-200 gap-x-3">
+        <Proyectos/> Proyectos
+    </h2>
+    <div class="px-12 md:px-4 mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+        {projects.map(project => (
+            <Card
+                title={project.title}
+                description={project.description}
+                image={project.image}
+                link={project.link}
+            />
+        ))}
+    </div>
+</div>
